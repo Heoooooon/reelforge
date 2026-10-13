@@ -14,4 +14,6 @@ First release: one-line brief → verified, scene-editable video.
 
 ## Unreleased
 
-- (nothing yet)
+- OmO/Senpi git package: `package.json` `pi.skills` registers `skills/reelforge` and the new
+  `skills/reelforge-shorts` one-command 9:16 adapter (brief, or interview video + subtitles + B-roll).
+- `scripts/verify.mjs` checks package discovery with the real Senpi loader. Engine code unchanged.

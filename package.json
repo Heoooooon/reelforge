@@ -16,7 +16,10 @@
     "precommit": "node scripts/precommit.mjs",
     "schemas": "node scripts/validate-schemas.mjs",
     "selftest": "node tests/vf-selftest.mjs",
-    "render": "hyperframes render poc/fixtures/p0a --output out/p0a.mp4 --fps=30 --quality=high --workers=1 --no-browser-gpu"
+    "render": "hyperframes render poc/fixtures/p0a --output out/p0a.mp4 --fps=30 --quality=high --workers=1 --no-browser-gpu",
+    "omo:shorts": "node skills/reelforge-shorts/scripts/run.mjs",
+    "omo:sample": "bash skills/reelforge-shorts/scripts/make-sample.sh && node skills/reelforge-shorts/scripts/run.mjs --input skills/reelforge-shorts/examples/interview/input.json --out omo-out/interview",
+    "verify": "node scripts/verify.mjs"
   },
   "dependencies": {
     "ajv": "8.20.0",
@@ -25,5 +28,19 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "keywords": [
+    "omo",
+    "omo-plugin",
+    "skill",
+    "shorts",
+    "video",
+    "hyperframes"
+  ],
+  "pi": {
+    "skills": [
+      "skills/reelforge",
+      "skills/reelforge-shorts"
+    ]
   }
 }

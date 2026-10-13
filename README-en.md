@@ -106,6 +106,27 @@ pipeline resume: [docs/pipeline.md](docs/pipeline.md) · compiler contract:
 [docs/compiler.md](docs/compiler.md) · preset catalog: [docs/design-presets.md](docs/design-presets.md) ·
 gallery operations: [GALLERY.md](skills/reelforge/references/gallery/GALLERY.md).
 
+## [omo] OmO / Senpi skill package (this fork)
+
+This fork packages [gongnyang's original ReelForge](https://github.com/gongnyang/reelforge) (Apache-2.0) as an
+OmO/Senpi git skill package. `package.json` registers the existing `skills/reelforge` (full direction loop) and a new
+`skills/reelforge-shorts` (one-command 9:16 shorts adapter) through `pi.skills`. Engine code is unchanged.
+Add it to `packages` in `~/.omo/agent/settings.json`:
+
+```json
+"packages": ["git:github.com/Heoooooon/reelforge@omo-package"]
+```
+
+```bash
+npm ci
+bash skills/reelforge-shorts/scripts/make-sample.sh   # generate interview sample media locally (macOS say)
+node skills/reelforge-shorts/scripts/run.mjs --input skills/reelforge-shorts/examples/interview/input.json --out omo-out/interview
+node scripts/verify.mjs                               # real Senpi loader discovery check
+```
+
+Input is a brief (scene headlines + narration) or an interview video + subtitles (SRT/VTT) + B-roll clips; output is
+`shorts.mp4` (1080×1920) plus a contact sheet. Contract: [skills/reelforge-shorts/references/io.md](skills/reelforge-shorts/references/io.md).
+
 ## [license-disclaimer] License & disclaimer
 
 Code is Apache-2.0. Fonts, music, images, and TTS output follow their own licenses and

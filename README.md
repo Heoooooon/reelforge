@@ -101,6 +101,26 @@ CLI와 설정은 [docs/usage.md](docs/usage.md), Studio는 [docs/studio.md](docs
 [docs/compiler.md](docs/compiler.md), 프리셋 카탈로그는 [docs/design-presets.md](docs/design-presets.md),
 갤러리 운영 규칙은 [GALLERY.md](skills/reelforge/references/gallery/GALLERY.md)를 봅니다.
 
+## [omo] OmO / Senpi 스킬 패키지 (이 포크)
+
+이 포크는 [gongnyang의 원본 ReelForge](https://github.com/gongnyang/reelforge)(Apache-2.0)를 OmO/Senpi git 스킬
+패키지로 제공합니다. `package.json`의 `pi.skills`가 기존 `skills/reelforge`(전체 연출 루프)와 새 `skills/reelforge-shorts`
+(원커맨드 9:16 쇼츠 어댑터)를 등록합니다. 엔진 코드는 바꾸지 않았습니다. `~/.omo/agent/settings.json`의 `packages`에 추가:
+
+```json
+"packages": ["git:github.com/Heoooooon/reelforge@omo-package"]
+```
+
+```bash
+npm ci
+bash skills/reelforge-shorts/scripts/make-sample.sh   # 인터뷰 예시 미디어 로컬 생성(macOS say)
+node skills/reelforge-shorts/scripts/run.mjs --input skills/reelforge-shorts/examples/interview/input.json --out omo-out/interview
+node scripts/verify.mjs                               # 실제 Senpi 로더 발견 검사
+```
+
+입력은 브리프(장면 헤드라인·나레이션) 또는 인터뷰 영상 + 자막(SRT/VTT) + B-roll 클립, 출력은 `shorts.mp4`(1080×1920)와
+컨택트시트입니다. 계약: [skills/reelforge-shorts/references/io.md](skills/reelforge-shorts/references/io.md).
+
 ## [license-disclaimer] 라이선스와 면책
 
 코드는 Apache-2.0입니다. 폰트, 음원, 이미지, TTS 산출물은 각자 라이선스와 서비스 조건을 따르며,

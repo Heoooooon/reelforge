@@ -1,0 +1,16 @@
+{
+  "mode": "interview",
+  "title": "스케일링 몇 번 받아야 할까?",
+  "hook": "스케일링, 1년에 몇 번?",
+  "cta": "저장하고 검진 챙기기",
+  "preset": "k-broadcast",
+  "brand": { "name": "샘플치과", "color": "#1F5FAE" },
+  "interview": {
+    "video": "media/interview.mp4",
+    "subtitles": "media/interview.srt",
+    "broll": [
+      { "file": "media/broll-1.mp4", "at": 4.2, "duration": 2.4 },
+      { "file": "media/broll-2.mp4", "at": 12.6, "duration": 2.0, "src_start": 0.5 }
+    ]
+  }
+}
