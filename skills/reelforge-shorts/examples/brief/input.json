@@ -1,0 +1,12 @@
+{
+  "mode": "brief",
+  "preset": "k-broadcast",
+  "brief": {
+    "scenes": [
+      { "headline": "임플란트 후 첫 주", "narration": "임플란트 수술 후 첫 일주일이 회복을 좌우합니다.", "mood": "urgent" },
+      { "headline": "이것만 지키세요", "narration": "거즈 물기, 빨대 금지, 처방약 챙기기. 세 가지만 기억하세요.", "items": ["거즈 1~2시간", "빨대·침 뱉기 금지", "처방약 끝까지"] },
+      { "headline": "원장님 한마디", "narration": "음주와 흡연은 잇몸뼈가 붙는 과정을 방해합니다.", "quote": "음주와 흡연은 회복을 방해합니다", "attribution": "샘플치과 원장" }
+    ],
+    "cta": "저장해두세요"
+  }
+}

@@ -11,3 +11,7 @@ fixtures/golden-specs/*/build/
 .omc/
 reports/
 demos/**/renders/
+
+# OMO adapter sample media / outputs (generated locally)
+skills/reelforge-shorts/examples/interview/media/
+omo-out/

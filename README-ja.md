@@ -102,6 +102,27 @@ CLI と設定: [docs/usage.md](docs/usage.md) · Studio: [docs/studio.md](docs/s
 [docs/compiler.md](docs/compiler.md) · プリセットカタログ: [docs/design-presets.md](docs/design-presets.md) ·
 ギャラリー運用: [GALLERY.md](skills/reelforge/references/gallery/GALLERY.md)。
 
+## [omo] OmO / Senpi スキルパッケージ(このフォーク)
+
+このフォークは [gongnyang のオリジナル ReelForge](https://github.com/gongnyang/reelforge)(Apache-2.0)を OmO/Senpi の
+git スキルパッケージとして提供します。`package.json` の `pi.skills` が既存の `skills/reelforge`(演出ループ全体)と新しい
+`skills/reelforge-shorts`(ワンコマンド 9:16 ショート用アダプター)を登録します。エンジンのコードは変更していません。
+`~/.omo/agent/settings.json` の `packages` に追加します:
+
+```json
+"packages": ["git:github.com/Heoooooon/reelforge@omo-package"]
+```
+
+```bash
+npm ci
+bash skills/reelforge-shorts/scripts/make-sample.sh   # インタビュー用サンプル素材をローカル生成(macOS say)
+node skills/reelforge-shorts/scripts/run.mjs --input skills/reelforge-shorts/examples/interview/input.json --out omo-out/interview
+node scripts/verify.mjs                               # 実際の Senpi ローダーによる検出チェック
+```
+
+入力はブリーフ(シーン見出し・ナレーション)またはインタビュー動画 + 字幕(SRT/VTT)+ B-roll クリップ、出力は
+`shorts.mp4`(1080×1920)とコンタクトシートです。契約: [skills/reelforge-shorts/references/io.md](skills/reelforge-shorts/references/io.md)。
+
 ## [license-disclaimer] ライセンスと免責
 
 コードは Apache-2.0 です。フォント、音源、画像、TTS 産出物はそれぞれのライセンスと
